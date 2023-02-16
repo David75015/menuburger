@@ -1,0 +1,155 @@
+/* Tablette */
+
+@media screen and (min-width: 481px) and (max-width : 1025px) {
+    [type="checkbox"] {
+        position: absolute;
+        height: 65px;
+        width: 65px;
+        z-index: 2;
+        left: 15px;
+        top: 5px;
+        opacity: 0;
+    }
+
+    #spanhaut {
+        z-index: 1;
+        background-color: black;
+        height: 2px;
+        position: absolute;
+        width: 65px;
+        top: 10px;
+        left: 15px;
+    }
+
+    #spanmilieu {
+        z-index: 1;
+        background-color: black;
+        height: 2px;
+        position: absolute;
+        width: 65px;
+        top: 35px;
+        left: 15px;
+    }
+
+    #spanbas {
+        z-index: 1;
+        background-color: black;
+        height: 2px;
+        position: absolute;
+        width: 65px;
+        top: 60px;
+        left: 15px;
+    }
+
+    [type="checkbox"]:checked~#spanhaut {
+        transition: transform 1s linear;
+        transform:translateY(25px) rotate(45deg);
+    }
+
+    [type="checkbox"]:checked~#spanmilieu {
+        transition: transform 1s linear;
+        transform:scale(0);
+    }
+
+    [type="checkbox"]:checked~#spanbas {
+        transition: transform 1s linear;
+        transform :translateY(-25px) rotate(-45deg);
+    }
+
+    [type="checkbox"]:not(checked)~#spanhaut {
+        transition: transform 1s linear;
+        transform:translateY(0px) rotate(0deg);
+    }
+
+    [type="checkbox"]:not(checked)~#spanmilieu {
+        transition: transform 1s linear;
+        transform:scale(1);
+    }
+
+    [type="checkbox"]:not(checked)~#spanbas {
+        transition: transform 1s linear;
+        transform:translateY(0px) rotate(0deg);
+    }
+
+    nav {
+        width: 200px;
+        padding: 0px;
+        left: -200px;
+        top: 70px;
+        position: relative;
+    }
+
+    ul {
+        width: 200px;
+    }
+
+    li {
+        width: 200px;
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+
+    li:hover {
+        background-color: blueviolet;
+    }
+
+    #sous-menu-formations {
+        top: 20%;
+    }
+
+    #sous-menu-partenaires {
+        top: 40%;
+    }
+
+    nav>ul>li>ul {
+        display: none;
+    }
+
+    li:hover ul {
+        display: block;
+        position: absolute;
+        left: 200px;
+        bottom: 20%;
+    }
+
+    ul>li>ul>li {
+        width: 200px;
+
+    }
+
+    [type="checkbox"]:checked~nav {
+        animation-name: menuCoche;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
+    @keyframes menuCoche {
+        0% {
+            transform: translate(-200px, 0px);
+        }
+
+        100% {
+            transform: translate(200px, 0px);
+        }
+    }
+
+    [type="checkbox"]:not(checked)~nav {
+        animation-name: menucoche;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
+    @keyframes menucoche {
+        0% {
+            transform: translate(200px, 0px);
+        }
+
+        100% {
+            transform: translate(-200px, 0px);
+        }
+    }
+
+}
